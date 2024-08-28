@@ -7,9 +7,20 @@
     <link rel="stylesheet" href="~/css/app.css" asp-append-version="true"/>
     <link rel="stylesheet" href="~/css/styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Movies.styles.css" asp-append-version="true"/>
+    <script src="https://kit.fontawesome.com/68c42abbaa.js" crossorigin="anonymous"></script>
 </head>
-<body>
-        @RenderBody()
+<body class="bg-black">
+<header>
+    <nav class="h-16 bg-black border-b border-gray-500 px-4 py-2 flex items-center justify-between">
+        <a type="button" class="text-white font-bold text-2xl" asp-page="/Index">
+            <i class="fa-solid fa-film text-red-600"></i> MovieApp
+        </a>
+        <a type="button" asp-page="/Movies/Create">Add Movie</a>
+    </nav>
+</header>
+<main>
+    @RenderBody()
+</main>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
 @await RenderSectionAsync("Scripts", required: false)
