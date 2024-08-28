@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Data.Models.Movie>
+
+<div class="flex items-center justify-center text-white w-full p-10">
+    <table class="w-full">
+        <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Title)</th>
+            <th>@Html.DisplayNameFor(model => model.ReleaseDate)</th>
+            <th>@Html.DisplayNameFor(model => model.Genre)</th>
+            <th>@Html.DisplayNameFor(model => model.Price)</th>
+            <th></th>
+        </tr>
+
+        </thead>
+        <tbody>
+        @foreach (var movie in Model)
+        {
+        <tr>
+            <td>@movie.Title</td>
+            <td>@movie.ReleaseDate</td>
+            <td>@movie.Genre</td>
+            <td>@movie.Price</td>
+        </tr>
+        }
+        </tbody>
+    </table>
+</div>

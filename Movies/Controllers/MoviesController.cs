@@ -1,12 +1,22 @@
 using Microsoft.AspNetCore.Mvc;
+using Services;
 
 namespace Movies.Controllers
 {
     public class MoviesController : Controller
     {
-        public ActionResult Index()
+        private readonly IMoviesService _moviesService;
+
+        public MoviesController(IMoviesService moviesService)
         {
-            return View();
+            _moviesService = moviesService;
+        }
+        
+        public async Task<ActionResult> Index()
+        {
+            var movies = await _moviesService.GetMovies();
+            
+            return View(movies);
         }
 
     }
