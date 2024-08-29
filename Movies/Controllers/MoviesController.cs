@@ -1,3 +1,4 @@
+using Data.Models;
 using Microsoft.AspNetCore.Mvc;
 using Services;
 
@@ -25,6 +26,20 @@ namespace Movies.Controllers
             if (movie is null) return NotFound("Movie not found.");
 
             return View(movie);
+        }
+        
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Create([Bind("Id,Title,ReleaseDate,Genre,Price,Rating")] Movie movie)
+        {
+            if (!ModelState.IsValid) return View(movie);
+
+            await _moviesService.AddMovie(movie);
+            return RedirectToAction("Index");
         }
 
     }
