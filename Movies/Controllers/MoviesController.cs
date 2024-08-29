@@ -34,11 +34,28 @@ namespace Movies.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Create([Bind("Id,Title,ReleaseDate,Genre,Price,Rating")] Movie movie)
+        public async Task<ActionResult> Create([Bind("Id,Title,ReleaseDate,Genre,Price,ImageUrl")] Movie movie)
         {
             if (!ModelState.IsValid) return View(movie);
 
             await _moviesService.AddMovie(movie);
+            return RedirectToAction("Index");
+        }
+
+        public async Task<ActionResult> Edit(int id)
+        {
+            var movie = await _moviesService.GetMovieById(id);
+            if (movie is null) return NotFound("Movie not found.");
+
+            return View(movie);
+        }
+        
+        [HttpPost]
+        public async Task<ActionResult> Edit([Bind("Id,Title,ReleaseDate,Genre,Price,ImageUrl")] Movie movie)
+        {
+            if (!ModelState.IsValid) return View(movie);
+            
+            await _moviesService.UpdateMovie(movie);
             return RedirectToAction("Index");
         }
 

@@ -9,7 +9,7 @@
             <p class="text-2xl font-bold text-center">@movie.Title</p>
             <div class="flex flex-col gap-2 items-center">
                <a asp-action="Details" asp-route-id="@movie.Id" type="button" class="px-4 py-2 rounded-2xl font-bold border-2 border-white hover:bg-white hover:text-black cursor-pointer transition-all duration-200">Details</a>
-               <a type="button" class="px-4 py-2 rounded-2xl font-bold bg-white text-black hover:bg-black hover:text-white cursor-pointer transition-all duration-200">Edit</a>
+               <a asp-action="Edit" asp-route-id="@movie.Id" type="button" class="px-4 py-2 rounded-2xl font-bold bg-white text-black hover:bg-black hover:text-white cursor-pointer transition-all duration-200">Edit</a>
                <a type="button" class="px-4 py-2 rounded-2xl font-bold bg-red-600 hover:bg-red-400 cursor-pointer transition-all duration-200">Delete</a>
             </div>
          </div>
