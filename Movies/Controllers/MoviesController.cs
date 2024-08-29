@@ -59,5 +59,23 @@ namespace Movies.Controllers
             return RedirectToAction("Index");
         }
 
+        public async Task<ActionResult> Delete(int id)
+        {
+            var movie = await _moviesService.GetMovieById(id);
+            if (movie is null) return NotFound("Movie not found.");
+            return View(movie);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        public async Task<ActionResult> DeleteConfirm(int id)
+        {
+            var movie = await _moviesService.GetMovieById(id);
+            if (movie is null) return NotFound("Movie not found.");
+            
+            await _moviesService.DeleteMovie(movie);
+            return RedirectToAction("Index");
+        }
+
     }
 }
