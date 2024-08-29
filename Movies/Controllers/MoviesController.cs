@@ -13,9 +13,14 @@ namespace Movies.Controllers
             _moviesService = moviesService;
         }
         
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Index(string? searchString)
         {
             var movies = await _moviesService.GetMovies();
+            
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                movies = movies.Where(s => s.Title!.ToLower().Contains(searchString.ToLower()));
+            }
             
             return View(movies);
         }
