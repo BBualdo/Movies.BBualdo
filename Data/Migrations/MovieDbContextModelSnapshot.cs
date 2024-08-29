@@ -33,6 +33,9 @@ namespace Data.Migrations
                     b.Property<string>("Genre")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
@@ -51,6 +54,7 @@ namespace Data.Migrations
                         {
                             Id = 1,
                             Genre = "Animation",
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BMWM5ZDcxMTYtNTEyNS00MDRkLWI3YTItNThmMGExMWY4NDIwXkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_.jpg",
                             Price = 24.99m,
                             ReleaseDate = new DateOnly(1999, 11, 13),
                             Title = "Toy Story 2"
@@ -59,6 +63,7 @@ namespace Data.Migrations
                         {
                             Id = 2,
                             Genre = "Science Fiction",
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
                             Price = 19.99m,
                             ReleaseDate = new DateOnly(1999, 3, 31),
                             Title = "The Matrix"
@@ -67,6 +72,7 @@ namespace Data.Migrations
                         {
                             Id = 3,
                             Genre = "Action",
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_FMjpg_UX1000_.jpg",
                             Price = 29.99m,
                             ReleaseDate = new DateOnly(2010, 7, 16),
                             Title = "Inception"
@@ -75,6 +81,7 @@ namespace Data.Migrations
                         {
                             Id = 4,
                             Genre = "Drama",
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1000_.jpg",
                             Price = 14.99m,
                             ReleaseDate = new DateOnly(1994, 9, 23),
                             Title = "The Shawshank Redemption"
@@ -83,6 +90,7 @@ namespace Data.Migrations
                         {
                             Id = 5,
                             Genre = "Crime",
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
                             Price = 18.99m,
                             ReleaseDate = new DateOnly(1994, 10, 14),
                             Title = "Pulp Fiction"
@@ -91,6 +99,7 @@ namespace Data.Migrations
                         {
                             Id = 6,
                             Genre = "Action",
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_FMjpg_UX1000_.jpg",
                             Price = 24.99m,
                             ReleaseDate = new DateOnly(2008, 7, 18),
                             Title = "The Dark Knight"
@@ -99,6 +108,7 @@ namespace Data.Migrations
                         {
                             Id = 7,
                             Genre = "Drama",
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_FMjpg_UX1000_.jpg",
                             Price = 17.99m,
                             ReleaseDate = new DateOnly(1994, 7, 6),
                             Title = "Forrest Gump"
@@ -107,6 +117,7 @@ namespace Data.Migrations
                         {
                             Id = 8,
                             Genre = "Animation",
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BYTYxNGMyZTYtMjE3MS00MzNjLWFjNmYtMDk3N2FmM2JiM2M1XkEyXkFqcGdeQXVyNjY5NDU4NzI@._V1_.jpg",
                             Price = 19.99m,
                             ReleaseDate = new DateOnly(1994, 6, 24),
                             Title = "The Lion King"
@@ -115,6 +126,7 @@ namespace Data.Migrations
                         {
                             Id = 9,
                             Genre = "Action",
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BMDliMmNhNDEtODUyOS00MjNlLTgxODEtN2U3NzIxMGVkZTA1L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
                             Price = 21.99m,
                             ReleaseDate = new DateOnly(2000, 5, 5),
                             Title = "Gladiator"
@@ -123,6 +135,7 @@ namespace Data.Migrations
                         {
                             Id = 10,
                             Genre = "Romance",
+                            ImageUrl = "https://m.media-amazon.com/images/M/MV5BMDdmZGU3NDQtY2E5My00ZTliLWIzOTUtMTY4ZGI1YjdiNjk3XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_FMjpg_UX1000_.jpg",
                             Price = 22.99m,
                             ReleaseDate = new DateOnly(1997, 12, 19),
                             Title = "Titanic"
