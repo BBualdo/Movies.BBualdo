@@ -19,5 +19,13 @@ namespace Movies.Controllers
             return View(movies);
         }
 
+        public async Task<ActionResult> Details(int id)
+        {
+            var movie = await _moviesService.GetMovieById(id);
+            if (movie is null) return NotFound("Movie not found.");
+
+            return View(movie);
+        }
+
     }
 }
